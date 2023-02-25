@@ -20,22 +20,23 @@
     "shortcuts": [
         [
             "kodi.exe",
-            "Kodi",
+            "Kodi-Matrix",
             "-p"
         ]
     ],
     "persist": "portable_data",
     "checkver": {
-        "url": "https://kodi.tv/download/windows",
-        "regex": "Kodi v(?<version>[\\d.]+) \\((?<name>\\w+)\\)"
+        "url": "https://api.github.com/repos/xbmc/xbmc/releases",
+        "jsonpath": "$..tag_name",
+        "regex": "(?<version>19\\.\\d)-Matrix"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.kodi.tv/releases/windows/win64/kodi-$version-$matchName-x64.exe#/dl.7z"
+                "url": "https://mirrors.kodi.tv/releases/windows/win64/kodi-$version-Matrix-x64.exe#/dl.7z"
             },
             "32bit": {
-                "url": "https://mirrors.kodi.tv/releases/windows/win32/kodi-$version-$matchName-x86.exe#/dl.7z"
+                "url": "https://mirrors.kodi.tv/releases/windows/win32/kodi-$version-Matrix-x86.exe#/dl.7z"
             }
         },
         "hash": {
