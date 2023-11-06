@@ -26,6 +26,6 @@
         "regex": "releases/tag/M([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/gitextensions/gitextensions/releases/download/M$version/Thorium_AVX2_$version.zip"
+        "url": "https://github.com/Alex313031/Thorium-Win-AVX2/releases/download/M$version/Thorium_AVX2_$version.zip"
     }
 }
