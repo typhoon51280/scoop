@@ -15,10 +15,6 @@
         "milkman-5.7.1",
         "milkman-5.7.1"
     ],
-    "extract_to": [
-        "",
-        "plugins"
-    ],
     "bin": [
         [
             "milkman.exe",
