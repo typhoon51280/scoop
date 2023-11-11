@@ -15,17 +15,21 @@
         "milkman-5.7.1",
         "milkman-5.7.1"
     ],
-    "bin": [
-        [
-            "milkman.exe",
-            "milkman"
-        ]
-    ],
     "shortcuts": [
         [
             "milkman.exe",
             "Milkman"
         ]
+    ],
+    "post_install": [
+        "if (!Test-Path $persist_dir) {",
+        "    New-Object System.IO.DirectoryInfo($persist_dir)",
+        "}",
+        "$source = fullpath \"$persist_dir\"plugins",
+        "$target = fullpath \"$dir\\plugins\"",
+        "if (!Test-Path $source) {",
+        "    New-DirectoryJunction $source $target",
+        "}"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
