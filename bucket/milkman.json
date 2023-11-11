@@ -21,15 +21,11 @@
             "Milkman"
         ]
     ],
+    "pre_uninstall": [
+        "icacls $dir --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD)"
+    ],
     "post_install": [
-        "if (!Test-Path $persist_dir) {",
-        "    New-Object System.IO.DirectoryInfo($persist_dir)",
-        "}",
-        "$source = fullpath \"$persist_dir\"plugins",
-        "$target = fullpath \"$dir\\plugins\"",
-        "if (!Test-Path $source) {",
-        "    New-DirectoryJunction $source $target",
-        "}"
+        "icacls $dir --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD)"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
