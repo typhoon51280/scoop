@@ -27,8 +27,8 @@
         "errors.log"
     ],
     "pre_install": [
-        "New-Item -Path $dir -Name database.db -ItemType File",
-        "New-Item -Path $dir -Name errors.log  -ItemType File"
+        "New-Item -Path $dir -Name database.db -ItemType File | Out-Null",
+        "New-Item -Path $dir -Name errors.log  -ItemType File | Out-Null"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
