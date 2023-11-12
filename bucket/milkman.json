@@ -22,10 +22,10 @@
         ]
     ],
     "pre_uninstall": [
-        "icacls $dir --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD)"
+        "icacls $dir --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD) | Out-Null"
     ],
     "post_install": [
-        "icacls $dir --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD)"
+        "icacls $dir --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD) | Out-Null"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
