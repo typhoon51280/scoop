@@ -22,10 +22,10 @@
         ]
     ],
     "pre_uninstall": [
-        "icacls $dir --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD) /t /c"
+        "icacls $(Get-Item $dir | Select-Object -ExpandProperty Target) --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD) /T /C /Q"
     ],
     "post_install": [
-        "icacls $dir --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD) /t /c"
+        "icacls $(Get-Item $dir | Select-Object -ExpandProperty Target) --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD) /T /C /Q"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
