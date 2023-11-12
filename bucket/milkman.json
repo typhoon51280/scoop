@@ -21,11 +21,14 @@
             "Milkman"
         ]
     ],
-    "pre_uninstall": [
-        "icacls $(Get-Item $dir | Select-Object -ExpandProperty Target) --% /inheritance:e /grant *S-1-1-0:(OI)(CI)(WD,AD) /T /C /Q"
+    "persist": [
+        "sync",
+        "database.db",
+        "errors.log"
     ],
-    "post_install": [
-        "icacls $(Get-Item $dir | Select-Object -ExpandProperty Target) --% /inheritance:e /deny *S-1-1-0:(OI)(CI)(WD,AD) /T /C /Q"
+    "pre_install": [
+        "New-Item -Path $dir -Name database.db -ItemType File",
+        "New-Item -Path $dir -Name errors.log  -ItemType File"
     ],
     "checkver": {
         "github": "https://github.com/warmuuh/milkman",
