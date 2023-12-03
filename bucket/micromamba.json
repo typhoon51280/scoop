@@ -7,9 +7,9 @@
     "hash": "9baa0a4c432df2509c2911c8a4d373facfadab629792ee8ce56f28d5b007390d",
     "extract_dir": "Library/bin",
     "bin": [
-        "micromamba.exe",
-        "micromamba"
+        "micromamba.exe"
     ],
+    "post_install": "'Library' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",
     "persist": [
         "data"
     ],
