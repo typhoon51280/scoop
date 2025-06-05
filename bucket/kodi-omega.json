@@ -16,7 +16,7 @@
             "hash": "37516550aefb1e416801cba6c1ea2cf559c72ec336c99ade3507330c75aeb13a"
         }
     },
-    "post_install": "'$PLUGINSDIR', '$TEMP', 'AppxManifest.xml', 'Uninstall.exe' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",
+    "post_install": "'$PLUGINSDIR', '$TEMP', 'AppxManifest.xml' | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force }",
     "shortcuts": [
         [
             "kodi.exe",
